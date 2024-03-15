@@ -71,8 +71,8 @@ window.onload = function () {
             vertical: true,
             verticalSwiping: true,
             focusOnSelect: true,
-            prevArrow: '<img class="slider-arrow-prev" src="../img/arr-next.png" alt="">',
-            nextArrow: '<img class="slider-arrow-next" src="../img/arr-prev.png" alt="">',
+            prevArrow: '<img class="slider-arrow-prev" src="../img/arr-next.png" alt="asasa">',
+            nextArrow: '<img class="slider-arrow-next" src="../img/arr-prev.png" alt="asasa">',
             asNavFor: $('.slider-for', this),
             responsive: [
                 {
@@ -80,8 +80,8 @@ window.onload = function () {
                     settings: {
                         vertical: false,
                         verticalSwiping: false,
-                        prevArrow: '<img class="slider-arrow-prev" src="../img/arr-hor-prev.png" alt="">',
-                        nextArrow: '<img class="slider-arrow-next" src="../img/arr-hor-next.png" alt="">',
+                        prevArrow: '<img class="slider-arrow-prev" src="../img/arr-hor-prev.png" alt="asas">',
+                        nextArrow: '<img class="slider-arrow-next" src="../img/arr-hor-next.png" alt="asas">',
                     }
                 }]
         });
