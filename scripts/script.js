@@ -43,11 +43,11 @@ window.onload = function () {
     burgerBtn.onclick = function () {
         if (modalMenu.classList.contains('open')) {
             modalMenu.classList.remove('open');
-            burgerBtn.innerHTML = '<img src="../img/burger.png">';
+            burgerBtn.innerHTML = '<img src="../img/burger.png" alt="бургер меню">';
             burgerBtn.classList.remove('open');
         } else {
             modalMenu.classList.add('open')
-            burgerBtn.innerHTML = '<img src="../img/cross.png">';
+            burgerBtn.innerHTML = '<img src="../img/cross.png" alt="бургер меню">';
             burgerBtn.classList.add('open');
         }
     }
