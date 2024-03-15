@@ -87,6 +87,7 @@ window.onload = function () {
                     }
                 }]
         });
+        
 
         $('.slider-for', this).slick({
             slidesToShow: 1,
