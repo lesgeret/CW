@@ -101,8 +101,8 @@ window.onload = function () {
             slidesToShow: 2,
             slidesToScroll: 1,
             focusOnSelect: true,
-            prevArrow: '<img class="slider-arrow-prev" src="../img/arr_BIG_prev.png" alt="">',
-            nextArrow: '<img class="slider-arrow-next" src="../img/arr_BIG_next.png" alt="">',
+            prevArrow: '<img class="slider-arrow-prev" src="../img/arr_BIG_prev.png" alt="asasa">',
+            nextArrow: '<img class="slider-arrow-next" src="../img/arr_BIG_next.png" alt="asa">',
             responsive: [
                 {
                     breakpoint: 1140,
