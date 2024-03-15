@@ -3,29 +3,29 @@ window.onload = function () {
 
     // ПЛАВНЫЙ СКРОЛЛ
     $('#pod_link').on('click', function () {
-        $('.pod')[0].scrollIntoView({behavior: 'smooth', block: "center"});
+        $('.pod')[0].scrollIntoView({ behavior: 'smooth', block: "center" });
     })
     $('#why_link').on('click', function () {
-        $('.why')[0].scrollIntoView({behavior: 'smooth', block: "center"});
+        $('.why')[0].scrollIntoView({ behavior: 'smooth', block: "center" });
     })
     $('#products_link').on('click', function () {
-        $('.products')[0].scrollIntoView({behavior: 'smooth'});
+        $('.products')[0].scrollIntoView({ behavior: 'smooth' });
     })
     $('#order_link').on('click', function () {
-        $('.order')[0].scrollIntoView({behavior: 'smooth', block: "center"});
+        $('.order')[0].scrollIntoView({ behavior: 'smooth', block: "center" });
     })
     $('#reviews_link').on('click', function () {
-        $('.reviews')[0].scrollIntoView({behavior: 'smooth', block: "center"});
+        $('.reviews')[0].scrollIntoView({ behavior: 'smooth', block: "center" });
     })
     $('#check_fruits').on('click', function () {
-        $('.products')[0].scrollIntoView({behavior: 'smooth'});
+        $('.products')[0].scrollIntoView({ behavior: 'smooth' });
     })
     $('#check_fruits2').on('click', function () {
-        $('.products')[0].scrollIntoView({behavior: 'smooth'});
+        $('.products')[0].scrollIntoView({ behavior: 'smooth' });
     })
 
 
-//   FIXED кнопка появление
+    //   FIXED кнопка появление
     let topBtn = $('.top-button');
     $(window).scroll(function (event) {
         var top = $(window).scrollTop();
@@ -36,31 +36,32 @@ window.onload = function () {
         }
     });
 
-// modal menu JS
+    // modal menu JS
     let modalMenu = document.getElementById('menu');
     let burgerBtn = document.getElementById('burger');
+    let crossBtn = document.getElementById('burger-cross');
 
-    burgerBtn.onclick = function () {
-        if (modalMenu.classList.contains('open')) {
-            modalMenu.classList.remove('open');
-            burgerBtn.innerHTML = '<img src="../img/burger.png" alt="бургер меню">';
-            burgerBtn.classList.remove('open');
-        } else {
-            modalMenu.classList.add('open')
-            burgerBtn.innerHTML = '<img src="../img/cross.png" alt="бургер меню">';
-            burgerBtn.classList.add('open');
-        }
+    burgerBtn.onclick = function () {   /* бургер открывает */
+        modalMenu.classList.add('open');
+        burgerBtn.style.display = 'none';
+        crossBtn.style.display = 'block';
+    }
+
+    crossBtn.onclick = function () {     /* крестик закрывает */
+        modalMenu.classList.remove('open');
+        burgerBtn.style.display = 'block';
+        crossBtn.style.display = 'none';
     }
 
     document.querySelectorAll('#menu *').forEach((item) => {
         item.onclick = () => {
             modalMenu.classList.remove('open');
-            burgerBtn.innerHTML = '<img src="../img/burger.png" alt="бургер меню">';
-            burgerBtn.classList.remove('open');
+            crossBtn.style.display = 'none';
+            burgerBtn.style.display = 'block';
         }
     })
 
-// slider SLICK
+    // slider SLICK
     $('.pod-grid').each(function () {     /* выделяем слайдер в блоке Товар дня */
 
         $('.slider-nav', this).slick({
@@ -133,7 +134,7 @@ window.onload = function () {
     });
 
 
-//     PRODUCTS-BUTTON
+    //     PRODUCTS-BUTTON
     let btnAll = document.getElementById('btn_all');
     let btnRare = document.getElementById('btn_rare');
     let btnActions = document.getElementById('btn_actions');
@@ -151,7 +152,7 @@ window.onload = function () {
         })
     }
 
-//     переключение классов товаров
+    //     переключение классов товаров
     let productItems = document.querySelectorAll(".products-grid-item");
 
     btnAll.addEventListener('click', function () { /* включаем ВСЁ */
@@ -210,24 +211,24 @@ window.onload = function () {
     }
 
 
-        // закрыть по клику в серой зоне
-        orderModal.addEventListener('click', (e) => {
-            const withinBoundaries = e.composedPath().includes(orderModalBlock);
+    // закрыть по клику в серой зоне
+    orderModal.addEventListener('click', (e) => {
+        const withinBoundaries = e.composedPath().includes(orderModalBlock);
 
-            if (!withinBoundaries) {
-                orderModal.style.display = 'none';
-            }
-        })
-// закрыть по ESC
-        document.addEventListener('keydown', function (e) {
-            if (e.keyCode === 27) {
-                orderModal.style.display = 'none';
-            }
-        })
+        if (!withinBoundaries) {
+            orderModal.style.display = 'none';
+        }
+    })
+    // закрыть по ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 27) {
+            orderModal.style.display = 'none';
+        }
+    })
 
-//     работа с ФОРМАМИ
+    //     работа с ФОРМАМИ
 
-        // input number
+    // input number
     document.getElementById('quantity').oninput = (e) => {
         let value = e.target.value;
         if (value.length > 1) {
@@ -235,121 +236,121 @@ window.onload = function () {
         }
     }
 
-        // hide form() - прячет форму, показывает сообщение
-        let hideForm = function () {
-            $('#h3-order-modal').hide();
-            $('#order-form').hide();
-            $('#order-success').css('display', 'block');
-        }
-        // showform() - показывает форму, прячет сообщение
-        let showForm = function () {
-            $('#h3-order-modal').show();
-            $('#order-form').show();
-            $('#order-success').css('display', 'none');
-        }
-
-
-//     подстановка названия
-        let addToCardButton = $('.product-order-button');
-        let productSelect = $('.order-select');
-        addToCardButton.click((e) => {
-            let clickId = e.target.id;     /* проверяем ИД кнопки и вставляем ВАЛЬЮ в селект */
-            switch (clickId) {
-                case 'btnOrderMango':
-                    productSelect.val('mango');
-                    break;
-                case 'btnOrderMaracuya':
-                    productSelect.val('maracuya');
-                    break;
-                case 'btnOrderCocos':
-                    productSelect.val('cocos');
-                    break;
-                case 'btnOrderPittah':
-                    productSelect.val('pittah');
-                    break;
-                case 'btnOrderAnanas':
-                    productSelect.val('ananas');
-                    break;
-                case 'btnOrderPapaya':
-                    productSelect.val('papaya');
-                    break;
-            }
-        })
-//   подстановка названия ТОВАР ДНЯ
-        $('.pod-button').click(function () {
-            productSelect.val('mango');
-        });
-
-//     маска телефона
-        let phone = $('#phone');
-        phone.inputmask({"mask": "+7 (999)999-99-99"});
-
-        /* функция убирает предупреждение при начале ввода в инпут */
-        let orderInput = $('.order-input');
-        orderInput.on('input', function () {
-            $(this).css('borderColor', '#122508');
-        })
-
-        let name = $('#name');
-        /* основная функция SUBMIT  */
-        $('#submit').click(function () {
-
-            let hasError = false;
-
-            if (!productSelect.val()) {
-                productSelect.css('borderColor', '#D5135EFF');
-                hasError = true;
-            }
-            if (!name.val()) {
-                name.attr('placeholder', 'Введите ваше имя!');
-                name.css('borderColor', '#D5135EFF');
-                hasError = true;
-            }
-            if (!phone.val()) {
-                phone.attr('placeholder', 'Введите ваш телефон!');
-                phone.css('borderColor', '#D5135EFF');
-                hasError = true;
-            }
-            if (!hasError) {
-                $.ajax({
-                    method: "POST",
-                    url: "https://testologia.site/checkout",
-                    data: {product: productSelect.val(), name: name.val(), phone: phone.val()}
-                })
-                    .done(function (msg) {
-                        if (msg.success) {
-                            hideForm();
-                        } else {
-                            alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
-                        }
-                    });
-            }
-        });
-
-//     ТАЙМЕР
-        function countdown() {
-            let dt = new Date
-            let tz = dt.getTimezoneOffset()
-            let now = Math.floor(dt / 1000 - tz * 60)
-            let next = Math.ceil((dt / 1000 / 60 - tz) / 60 / 24) * 60 * 60 * 24
-            let left = next - now
-            let hours = ~~(left / 60 / 60)
-            let mins = ~~(left / 60 % 60)
-            let secs = ~~(left % 60)
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = mins;
-            document.getElementById("seconds").innerHTML = secs;
-        }
-
-        countdown()
-        setInterval(countdown, 1000)
-
-        // wow js
-        new WOW({
-            animateClass: 'animate__animated',
-        }).init();
-
-// onload
+    // hide form() - прячет форму, показывает сообщение
+    let hideForm = function () {
+        $('#h3-order-modal').hide();
+        $('#order-form').hide();
+        $('#order-success').css('display', 'block');
     }
+    // showform() - показывает форму, прячет сообщение
+    let showForm = function () {
+        $('#h3-order-modal').show();
+        $('#order-form').show();
+        $('#order-success').css('display', 'none');
+    }
+
+
+    //     подстановка названия
+    let addToCardButton = $('.product-order-button');
+    let productSelect = $('.order-select');
+    addToCardButton.click((e) => {
+        let clickId = e.target.id;     /* проверяем ИД кнопки и вставляем ВАЛЬЮ в селект */
+        switch (clickId) {
+            case 'btnOrderMango':
+                productSelect.val('mango');
+                break;
+            case 'btnOrderMaracuya':
+                productSelect.val('maracuya');
+                break;
+            case 'btnOrderCocos':
+                productSelect.val('cocos');
+                break;
+            case 'btnOrderPittah':
+                productSelect.val('pittah');
+                break;
+            case 'btnOrderAnanas':
+                productSelect.val('ananas');
+                break;
+            case 'btnOrderPapaya':
+                productSelect.val('papaya');
+                break;
+        }
+    })
+    //   подстановка названия ТОВАР ДНЯ
+    $('.pod-button').click(function () {
+        productSelect.val('mango');
+    });
+
+    //     маска телефона
+    let phone = $('#phone');
+    phone.inputmask({ "mask": "+7 (999)999-99-99" });
+
+    /* функция убирает предупреждение при начале ввода в инпут */
+    let orderInput = $('.order-input');
+    orderInput.on('input', function () {
+        $(this).css('borderColor', '#122508');
+    })
+
+    let name = $('#name');
+    /* основная функция SUBMIT  */
+    $('#submit').click(function () {
+
+        let hasError = false;
+
+        if (!productSelect.val()) {
+            productSelect.css('borderColor', '#D5135EFF');
+            hasError = true;
+        }
+        if (!name.val()) {
+            name.attr('placeholder', 'Введите ваше имя!');
+            name.css('borderColor', '#D5135EFF');
+            hasError = true;
+        }
+        if (!phone.val()) {
+            phone.attr('placeholder', 'Введите ваш телефон!');
+            phone.css('borderColor', '#D5135EFF');
+            hasError = true;
+        }
+        if (!hasError) {
+            $.ajax({
+                method: "POST",
+                url: "https://testologia.site/checkout",
+                data: { product: productSelect.val(), name: name.val(), phone: phone.val() }
+            })
+                .done(function (msg) {
+                    if (msg.success) {
+                        hideForm();
+                    } else {
+                        alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
+                    }
+                });
+        }
+    });
+
+    //     ТАЙМЕР
+    function countdown() {
+        let dt = new Date
+        let tz = dt.getTimezoneOffset()
+        let now = Math.floor(dt / 1000 - tz * 60)
+        let next = Math.ceil((dt / 1000 / 60 - tz) / 60 / 24) * 60 * 60 * 24
+        let left = next - now
+        let hours = ~~(left / 60 / 60)
+        let mins = ~~(left / 60 % 60)
+        let secs = ~~(left % 60)
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = mins;
+        document.getElementById("seconds").innerHTML = secs;
+    }
+
+    countdown()
+    setInterval(countdown, 1000)
+
+    // wow js
+    new WOW({
+        animateClass: 'animate__animated',
+    }).init();
+
+    // onload
+}
 
 
