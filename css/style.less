@@ -1,0 +1,1004 @@
+@font-face {
+  font-family: Montserrat-Reg;
+  src: url('../fonts/Montserrat-Regular.ttf')
+}
+
+@font-face {
+  font-family: Montserrat-Med;
+  src: url('../fonts/Montserrat-Medium.ttf')
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/Montserrat-Bold.ttf')
+}
+
+@font-face {
+  font-family: Montserrat-ExBold;
+  src: url('../fonts/Montserrat-ExtraBold.ttf')
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat-Reg, sans-serif;
+  color: @main-text;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.my-button {
+  border: 0;
+  cursor: pointer;
+  background-color: @main-text;
+  font-family: Montserrat-Bold, sans-serif;
+  font-size: 20px;
+  color: white;
+  border-radius: 50px;
+  padding: 25px 35px 25px 35px;
+}
+
+.my-button:hover {
+  color: #fdda02;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+
+  .header-background {
+    max-width: 1390px;
+    margin: 0 auto;
+    background-image: url("../img/fig1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .container {
+      padding-top: 44px;
+
+      .header-menu {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        height: 37px;
+
+        .header-menu-logo-yellow {
+
+          img {
+            display: block;
+            position: absolute;
+          }
+        }
+
+        .header-menu-logo-black {
+          img {
+            display: none;
+            position: absolute;
+          }
+        }
+
+        .header-menu-list {
+          display: flex;
+          margin: 0 auto;
+          gap: 39px;
+          padding-top: 12px;
+          padding-left: 53px;
+
+          li {
+            a {
+              font-family: Montserrat-Bold, sans-serif;
+              font-size: 16px;
+              color: @main-text;;
+              line-height: 1.2;
+            }
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .burger {
+          display: none;
+        }
+      }
+    }
+
+    .header-main {
+      display: flex;
+      position: relative;
+
+      .header-main-info {
+        max-width: 570px;
+        width: 100%;
+        padding-top: 160px;
+        padding-bottom: 161px;
+
+        h1 {
+          font-family: Montserrat-ExBold, sans-serif;
+          font-size: clamp(1.5rem, 6.627vw - 1.681rem, 2.875rem);
+          color: @main-text;
+          text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
+          margin-bottom: 46px;
+          line-height: 1.1;
+        }
+
+        p {
+          font-size: clamp(1rem, 1.205vw + 0.422rem, 1.25rem);
+          font-family: Montserrat-Reg, sans-serif;
+          color: @main-text;
+          line-height: 1.25;
+          text-shadow: 0 0 11.96px rgba(194, 170, 52, 0.21);
+          margin-bottom: 71px;
+          max-width: 420px;
+          width: 100%;
+        }
+      }
+
+      .header-main-image {
+
+        position: absolute;
+        bottom: 200px;
+        right: -84px;
+        //z-index: -1;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .header-main-768 {
+        display: none;
+      }
+    }
+  }
+}
+
+.about {
+  padding: 200px 0 180px 0;
+  background: url("../img/palm1.png") no-repeat 0 10%;
+  background-size: calc(clamp(5.313rem, 18.438vw + 1.625rem, 19.75rem));
+
+  .container {
+    .about-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .about-h2-768 {
+        display: none;
+      }
+
+      .about-image {
+        background-image: url("../img/fig3.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        img {
+          position: relative;
+          bottom: 89px;
+          right: 30px;
+          width: 100%;
+        }
+      }
+
+      .about-info {
+        max-width: 471px;
+        width: 100%;
+
+        h2 {
+          .h2-mixin ();
+          text-align: left;
+          margin-bottom: 50px;
+        }
+
+        .about-info-text {
+          font-size: 14px;
+          line-height: 1.35;
+
+          div {
+            span {
+              font-family: Montserrat-Bold, sans-serif;
+            }
+
+            &:first-child {
+              margin-bottom: 15px;
+            }
+
+            &:last-child {
+              max-width: 470px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pod {
+  padding: 0 0 200px 0;
+
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 50px;
+    }
+
+    .pod-grid {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 20px;
+      justify-content: space-between;
+
+      .pod-slider {
+        max-width: 118px;
+        margin-top: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .slider-arrow-next {
+          position: relative;
+          bottom: -10px;
+          padding: 15px 35px;
+        }
+
+        .slider-arrow-prev {
+          position: relative;
+          bottom: 10px;
+          padding: 15px 35px;
+        }
+
+        .pod-slider-item {
+          width: 115px;
+          height: 85px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .pod-picture {
+      max-width: 470px;
+      position: relative;
+      overflow: hidden;
+
+      .pod-image {
+        img {
+          width: 100%;
+        }
+      }
+
+      .pod-image-discount {
+        width: 61px;
+        height: 61px;
+        padding-top: 20px;
+        text-align: center;
+        background-image: url("../img/fig-discount.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        font-family: Montserrat-Bold, sans-serif;
+        font-size: 16px;
+        position: absolute;
+        top: 1%;
+        left: 86%;
+      }
+    }
+
+
+    .pod-timer {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      background-color: #fbf8f2;
+      border-radius: 100px;
+      max-width: 95px;
+      padding: 32px 0 32px 0;
+      text-align: center;
+
+      .pod-timer-text {
+        font-family: Montserrat-Med, sans-serif;
+        font-size: 13px;
+      }
+
+      .pod-timer-circle {
+        width: 70px;
+        height: 70px;
+        border: 2px solid white;
+        border-radius: 50px;
+        font-family: Montserrat-Reg, sans-serif;
+        font-size: 12px;
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 24px;
+        }
+      }
+    }
+
+
+    .pod-purchase {
+      max-width: 350px;
+      padding-left: 30px;
+
+      h3 {
+        font-family: Montserrat-ExBold, sans-serif;
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      .pod-purchase-info {
+        font-family: Montserrat-Reg, sans-serif;
+        font-size: 16px;
+        margin-bottom: 45px;
+      }
+
+      .pod-purchase-priceblock {
+        max-width: 285px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .pod-purchase-priceblock-price {
+          font-family: Montserrat-ExBold, sans-serif;
+          font-size: 20px;
+        }
+
+        .pod-purchase-priceblock-actualprice {
+          font-family: Montserrat-Med, sans-serif;
+          font-size: 20px;
+
+          &::after {
+            content: ' руб.';
+          }
+        }
+
+        .pod-purchase-priceblock-currentprice {
+          font-family: Montserrat-Reg, sans-serif;
+          font-size: 16px;
+          color: #757e70;
+          position: relative;
+
+          &::after {
+            content: ' руб.';
+          }
+
+          .line-through {
+            width: 65px;
+            height: 1px;
+            background-color: #757e70;
+            position: absolute;
+            transform: rotate(349deg);
+            top: 10px;
+            left: -3px;
+          }
+        }
+      }
+
+      .pod-button {
+        margin-bottom: 35px;
+        width: 289px;
+        padding: 23px 35px 23px 35px;
+      }
+
+      .pod-purchase-todayblock {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+
+        div {
+          font-family: Montserrat-Reg, sans-serif;
+          font-size: 14px;
+
+          span {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.why {
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 82px;
+    }
+
+    .why-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .why-flex-item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .why-flex-item-image {
+          width: 84px;
+          height: 84px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .why-flex-item-text {
+          max-width: 237px;
+          font-family: Montserrat-Reg, sans-serif;
+          font-size: 14px;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}
+
+.order-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  margin: 0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .order-modal-block {
+    width: 405px;
+    height: 556px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px 34px;
+    text-align: center;
+
+    h3 {
+      font-family: Montserrat-ExBold, sans-serif;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .order-modal-block-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .order-modal-select-block {
+        width: 100%;
+
+        .order-select-label {
+          display: flex;
+          gap: 2px;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-bottom: 30px;
+
+          .order-select {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 16px;
+            padding: 5px 10px 5px 10px;
+            border: 2px solid @main-text;
+            border-radius: 100px;
+          }
+
+          .order-quantity {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 16px;
+            padding: 5px 10px 5px 10px;
+            border: 2px solid @main-text;
+            border-radius: 100px;
+          }
+          &::after {
+            content: 'кг.';
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 16px;
+            padding-left: 5px;
+          }
+        }
+      }
+
+
+      h4 {
+        font-family: Montserrat-Bold, sans-serif;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .order-input {
+        width: 100%;
+        padding: 20px 30px 20px 20px;
+        margin-bottom: 30px;
+        outline: none;
+        border: 2px solid @main-text;
+        border-radius: 100px;
+        font-family: Montserrat-Bold, sans-serif;
+        font-size: 16px;
+
+        &::placeholder {
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 16px;
+        }
+      }
+
+      .order-modal-action {
+        .order-modal-button {
+          border: 0;
+          cursor: pointer;
+          background-color: @main-text;
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 20px;
+          color: white;
+          border-radius: 50px;
+          padding: 25px 35px 25px 35px;
+        }
+
+        .order-modal-button:hover {
+          color: #fdda02;
+        }
+      }
+    }
+    #order-success {
+      display: none;
+      font-family: Montserrat-ExBold, sans-serif;
+      font-size: 30px;
+    }
+  }
+}
+
+.products {
+  padding: 177px 0 177px 0;
+  background: url("../img/palm2.png") no-repeat 100% 173px;
+  background-size: calc(clamp(4.313rem, 18.438vw + 1.625rem, 17.75rem));
+
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 39px;
+    }
+
+    .products-button-block {
+      margin: 0 auto 90px;
+      border-radius: 50px;
+      border: 2px solid @main-text;
+      display: flex;
+      gap: 15px 15px;
+      max-width: 588px;
+
+      .product-select-button {
+        font-family: Montserrat-Reg, sans-serif;
+        font-size: 18px;
+        background-color: white;
+        color: @main-text;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        border-radius: 50px;
+        border: none;
+        transition: 0.3s ease;
+      }
+
+      .product-select-button.chosen {
+        background-color: @main-text;
+        color: white;
+        font-family: Montserrat-Bold, sans-serif;
+      }
+
+      #btn_all {
+        width: 112px;
+      }
+
+      #btn_rare {
+        width: 230px;
+      }
+
+      #btn_actions {
+        width: 133px;
+      }
+
+      #btn_new {
+        width: 168px;
+      }
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      align-items: center;
+      gap: 120px 20px;
+
+      .products-grid-item {
+        text-align: center;
+
+        img {
+          max-width: 289px;
+          max-height: 273px;
+          width: 100%;
+          margin-bottom: 34px;
+        }
+
+        .products-grid-item-name {
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 24px;
+          margin-bottom: 31px;
+        }
+
+        .products-grid-item-price {
+          font-family: Montserrat-Reg, sans-serif;
+          font-size: 24px;
+          margin-bottom: 31px;
+
+          &::after {
+            content: ' руб./кг';
+          }
+        }
+
+        .product-order-button {
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 18px;
+          padding: 23px 41px 23px 41px;
+        }
+      }
+    }
+  }
+}
+
+.order {
+  padding-bottom: 182px;
+
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 61px;
+    }
+
+    .order_image {
+      display: flex;
+      font-size: 14px;
+      line-height: 1.357;
+      text-align: center;
+
+      .order_image-1,
+      .order_image-2 {
+        position: relative;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+
+        .order_text1 {
+          position: absolute;
+          top: 30%;
+          left: 9%;
+          max-width: 110px;
+        }
+
+        .order_text2 {
+          position: absolute;
+          top: 86%;
+          left: 45%;
+          max-width: 175px;
+        }
+
+        .order_number {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: @main-yellow;
+          font-family: Montserrat-Bold, sans-serif;
+          font-size: 16px;
+          padding-top: 4px;
+        }
+
+        .order_number1 {
+          position: absolute;
+          top: 56%;
+          left: 22%;
+        }
+
+        .order_number2 {
+          position: absolute;
+          top: 54%;
+          left: 74%;
+        }
+      }
+
+      .order_image-2 {
+
+        .order_text3 {
+          position: absolute;
+          top: -3%;
+          left: 8%;
+          max-width: 110px;
+        }
+
+        .order_text4 {
+          position: absolute;
+          top: 78%;
+          left: 59%;
+          max-width: 133px;
+        }
+
+        .order_number3 {
+          position: absolute;
+          top: 5%;
+          left: 38%;
+        }
+
+        .order_number4 {
+          position: absolute;
+          top: 74%;
+          left: 89%;
+        }
+      }
+    }
+
+    .order-image-420 {
+      display: none;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.reviews {
+  padding-bottom: 120px;
+
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 59px;
+    }
+
+    .rewiews-slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+
+      .rewiews-slider-item {
+        margin: 0 auto;
+        max-width: 494px;
+        height: 291px;
+        padding: 52px 0 0 61px;
+
+        background-image: url("../img/fig-rewiews.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        .rewiews-slider-item_name {
+          display: flex;
+          align-items: center;
+          margin-bottom: 35px;
+
+          .rewiews-slider-item_name-image {
+            margin-right: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              object-fit: contain;
+            }
+          }
+
+          div {
+            font-family: Montserrat-Bold, sans-serif;
+            font-size: 20px;
+          }
+        }
+
+        .rewiews-slider-item_text {
+          text-align: left;
+          max-width: 380px;
+          max-height: 83px;
+          font-size: 16px;
+          font-family: Montserrat-Reg, sans-serif;
+          overflow: auto;
+          line-height: 1.3;
+
+          &::-webkit-scrollbar {
+            width: 2px;
+          }
+
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba(128, 128, 128, 0.47);
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-track-piece {
+          }
+        }
+      }
+
+      .slick-arrow {
+        padding: 20px 4px 20px 4px;
+      }
+    }
+  }
+}
+
+.faq {
+  padding-bottom: 180px;
+  background: url("../img/palm3.png") no-repeat 0 1%;
+  background-size: clamp(6.688rem, 23.063vw, 23.313rem);;
+
+
+  .container {
+    h2 {
+      .h2-mixin ();
+      margin-bottom: 61px;
+    }
+
+    .faq-accord {
+      margin: 0 auto;
+      max-width: 917px;
+
+      h3 {
+        position: relative;
+        background-color: white;
+        border: 1px solid @main-yellow;
+        border-radius: 15px;
+        padding: 26px 60px 26px 40px;
+        font-family: Montserrat-Bold, sans-serif;
+        font-size: 18px;
+        margin-top: 10px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .ui-accordion-header-active {
+        color: @main-text;
+        border-radius: 15px 15px 0 0;
+      }
+
+      div {
+        border: 1px solid @main-yellow;
+        border-radius: 0 0 15px 15px;
+        border-top: none;
+        padding: 26px 60px 26px 40px;
+        font-family: Montserrat-Reg, sans-serif;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.footer {
+
+  .footer-background {
+    padding-top: 58px;
+    max-width: 1589px;
+    margin: 0 auto;
+    background-image: url("../img/fig5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .container {
+      .footer-flex {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: space-between;
+        padding-bottom: 26px;
+
+        .footer-flex-socials {
+          display: flex;
+          gap: 22px;
+
+          a {
+            width: 45px;
+            height: 43px;
+
+            svg {
+              width: 100%;
+              fill: white;
+            }
+
+            &:hover svg {
+              fill: @main-text;
+            }
+          }
+        }
+      }
+
+      .footer-rights {
+        font-size: 14px;
+        padding-bottom: 58px;
+      }
+    }
+  }
+}
+
+.top-button {
+  width: 78px;
+  height: 78px;
+  position: fixed;
+  right: 71px;
+  bottom: 275px;
+  background-image: url("../img/fig7.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease;
+}
+
+//  IMPORT
+@import "media";
+@import "theme";

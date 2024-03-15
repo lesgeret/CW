@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course_Work</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+<!--    <link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet/less" type="text/css" href="css/style.less"/>
+    <!--    <link rel="stylesheet/less" type="text/css" href="css/media.less"/>-->
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+</head>
+<body>
+
+<section class="header" id="top">
+    <div class="header-background">
+        <div class="container">
+            <div class="header-menu">
+                <div class="header-menu-logo-yellow">
+                    <img src="img/logo.png" alt="логотип">
+                </div>
+                <div class="header-menu-logo-black">
+                    <img src="img/logo_black.png" alt="логотип">
+                </div>
+                <ul class="header-menu-list" id="menu">
+                    <li class="header-menu-list-item">
+                        <a id="pod_link" href="#o">Товар дня</a>
+                    </li>
+                    <li class="header-menu-list-item">
+                        <a id="why_link" href="#o">Почему мы</a>
+                    </li>
+                    <li class="header-menu-list-item">
+                        <a id="products_link" href="#o">Наши фрукты</a>
+                    </li>
+                    <li class="header-menu-list-item">
+                        <a id="order_link" href="#o">Как заказать</a>
+                    </li>
+                    <li class="header-menu-list-item">
+                        <a id="reviews_link" href="#o">Отзывы</a>
+                    </li>
+                </ul>
+                <a href="#o" class="burger" id="burger">
+                    <img src="img/burger.png" alt="бургер меню">
+                </a>
+            </div>
+            <div class="header-main">
+                <div class="header-main-info">
+                    <h1>Только свежие экзотические фрукты в нашем магазине</h1>
+                    <p>Вкусные и необычные фрукты, которые вы не найдёте в магазине!</p>
+                    <button id="check_fruits" class="my-button">Посмотреть фрукты</button>
+                </div>
+                <div class="header-main-image">
+                    <img src="img/main-image.png" alt="фрукты">
+                </div>
+                <div class="header-main-768">
+                    <div>
+                        <img src="img/main-image-crop.png" alt="">
+                    </div>
+                    <p>Вкусные и необычные фрукты, которые вы не найдёте в магазине!</p>
+                    <button type="button" id="check_fruits2" class="my-button">Посмотреть фрукты</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-flex">
+            <h2 class="about-h2-768 wow animate__fadeIn">О нас</h2>
+            <div class="about-image">
+                <img src="img/about-fruits.png" alt="манго">
+            </div>
+            <div class="about-info">
+                <h2 class="wow animate__fadeIn">О нас</h2>
+                <div class="about-info-text">
+                    <div>Наш магазин поможет вам почувствовать вкус местных фруктов из различных уголков нашей планеты.
+                        Благодаря <span>5 летнему опыту работы на рынке</span>, мы отлично наладили поставки самых
+                        лучших фруктов из
+                        самых далеких стран.
+                    </div>
+                    <div>Поэтому вы сможете насладиться ими через совсем небольшое время после оформления заказа. Также
+                        все
+                        фрукты проходят <span>ручной отбор</span>, поэтому на своем столе вы увидите только качественные
+                        и свежие
+                        продукты.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pod" id="pod">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Товар дня</h2>
+        <div class="pod-grid">
+
+            <div class="pod-slider slider-nav">
+                <a class="pod-slider-item">
+                    <img src="img/pod-mango1-mini.jpg" alt="">
+                </a>
+                <a class="pod-slider-item">
+                    <img src="img/pod-mango2-mini.jpg" alt="">
+                </a>
+                <a class="pod-slider-item">
+                    <img src="img/pod-mango3-mini.jpg" alt="">
+                </a>
+                <a class="pod-slider-item">
+                    <img src="img/pod-mango4-mini.jpg" alt="">
+                </a>
+                <a class="pod-slider-item">
+                    <img src="img/pod-mango5-mini.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="pod-picture">
+                <div class="pod-image slider-for">
+                    <img src="img/pod-mango1.jpg" alt="">
+                    <img src="img/pod-mango2.jpg" alt="">
+                    <img src="img/pod-mango3.jpg" alt="">
+                    <img src="img/pod-mango4.jpg" alt="">
+                    <img src="img/pod-mango5.jpg" alt="">
+                </div>
+                <div class="pod-image-discount">
+                    -20%
+                </div>
+            </div>
+
+
+            <div class="pod-timer">
+                <div class="pod-timer-text">До конца акции осталось:</div>
+                <div class="pod-timer-circle">
+                    <span id="hours"></span> часов
+                </div>
+                <div class="pod-timer-circle">
+                    <span id="minutes"></span> минут
+                </div>
+                <div class="pod-timer-circle">
+                    <span id="seconds"></span> секунд
+                </div>
+            </div>
+
+            <div class="pod-purchase">
+                <h3>Maнго</h3>
+                <div class="pod-purchase-info">
+                    Предлагаем попробовать спелый и сочный манго по супер цене прямо из солнечного и далекого Вьетнама.
+                </div>
+                <div class="pod-purchase-priceblock">
+                    <div class="pod-purchase-priceblock-price">Цена, кг:</div>
+                    <div class="pod-purchase-priceblock-actualprice">65</div>
+                    <div class="pod-purchase-priceblock-currentprice">
+                        78
+                        <div class="line-through"></div>
+                    </div>
+                </div>
+                <button class="my-button pod-button btn-order-product">Заказать</button>
+                <div class="pod-purchase-todayblock">
+                    <img src="img/micro_logo.png" alt="">
+                    <div>Сегодня этот манго купили уже <span>25</span> раз!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Почему мы</h2>
+        <div class="why-flex">
+            <div class="why-flex-item">
+                <div class="why-flex-item-image">
+                    <img src="img/why_like.png" alt="why-like">
+                </div>
+                <div class="why-flex-item-text">За 5 лет работы на рынке мы не получили ни одного негативного отзыва от
+                    наших клиентов
+                </div>
+            </div>
+            <div class="why-flex-item">
+                <div class="why-flex-item-image">
+                    <img src="img/why_certificate.png" alt="why-like">
+                </div>
+                <div class="why-flex-item-text">На все позиции есть
+                    сертификат, подтверждающий свежесть и безопасность закупаемых фруктов
+                </div>
+            </div>
+            <div class="why-flex-item">
+                <div class="why-flex-item-image">
+                    <img src="img/why_dragon-fruit.png" alt="why-like">
+                </div>
+                <div class="why-flex-item-text">Работаем с поставщиками из самых далеких стран, поэтому редкие фрукты вы
+                    сможете попробовать только у нас
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="order-modal" class="order-modal">
+    <div id="order-modal-block" class="order-modal-block">
+        <h3 id="h3-order-modal" class="wow animate__fadeIn">Оформление заказа</h3>
+        <form id="order-form" class="order-modal-block-form">
+            <h4>Выберите фрукты</h4>
+            <div class="order-modal-select-block">
+                <label class="order-select-label">
+                    <select class="order-select" name="" id="">
+                        <option value="mango">Манго, Въетнам</option>
+                        <option value="maracuya">Маракуйя, Таиланд</option>
+                        <option value="cocos">Кокос, ЮАР</option>
+                        <option value="pittah">Питтахайя, Таиланд</option>
+                        <option value="ananas">Ананас, Таиланд</option>
+                        <option value="papaya">Папайя, Бразилия</option>
+                    </select>
+                    <input type="number" class="order-quantity" value="1" maxlength="1" id="quantity" name="quantity" min="1" max="5">
+                </label>
+            </div>
+            <h4>Заполните данные для заказа</h4>
+            <input id="name" class="order-input" type="text" maxlength="20" placeholder="Ваше имя">
+            <input id="phone" class="order-input" type="text" placeholder="+7 (__) ___ - __ - __">
+            <div class="order-modal-action">
+                <button type="button" id="submit" class="order-modal-button">Оформить заказ
+                </button>
+            </div>
+        </form>
+        <div id="order-success">
+            Спасибо заказ, мы свяжемся с вами в ближайшее время!
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Наши фрукты</h2>
+        <div class="products-button-block">
+            <button id="btn_all" class="product-select-button">Все</button>
+            <button id="btn_rare" class="product-select-button">Самые редкие</button>
+            <button id="btn_actions" class="product-select-button">Акции</button>
+            <button id="btn_new" class="product-select-button">Новинки</button>
+        </div>
+        <div class="products-grid">
+            <div class="products-grid-item product-action product-new">
+                <img src="img/prod_mango.png" alt="манго">
+                <div class="products-grid-item-name">Манго, Въетнам</div>
+                <div class="products-grid-item-price">65</div>
+                <button id="btnOrderMango" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+            <div class="products-grid-item product-rare">
+                <img src="img/prod_marac.png" alt="маракуйя">
+                <div class="products-grid-item-name">Маракуйя, Таиланд</div>
+                <div class="products-grid-item-price">45</div>
+                <button id="btnOrderMaracuya" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+            <div class="products-grid-item product-new">
+                <img src="img/prod_coconut.png" alt="кокос">
+                <div class="products-grid-item-name">Кокос, ЮАР</div>
+                <div class="products-grid-item-price">37</div>
+                <button id="btnOrderCocos" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+            <div class="products-grid-item product-rare">
+                <img src="img/prod_pitt.png" alt="питтахайя">
+                <div class="products-grid-item-name">Питтахайя, Таиланд</div>
+                <div class="products-grid-item-price">61</div>
+                <button id="btnOrderPittah" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+            <div class="products-grid-item product-new">
+                <img src="img/prod_pineapple.png" alt="ананас">
+                <div class="products-grid-item-name">Ананас, Таиланд</div>
+                <div class="products-grid-item-price">48</div>
+                <button id="btnOrderAnanas" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+            <div class="products-grid-item product-new">
+                <img src="img/prod_papaya.png" alt="папайя">
+                <div class="products-grid-item-name">Папайя, Бразилия</div>
+                <div class="products-grid-item-price">57</div>
+                <button id="btnOrderPapaya" class="my-button product-order-button btn-order-product">Заказать</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="order">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Как заказать</h2>
+        <div class="order_image">
+            <div class="order_image-1">
+                <img src="img/curve_line1.png" alt="как заказать">
+                <div class="order_text1">
+                    Оформляете заказ на сайте
+                </div>
+                <div class="order_text2">
+                    Наши операторы свяжутся с вами для подтверждение заказа
+                </div>
+                <div class="order_number order_number1">1</div>
+                <div class="order_number order_number2">2</div>
+            </div>
+            <div class="order_image-2">
+                <img src="img/curve_line2.png" alt="как заказать">
+                <div class="order_text3">
+                    Мы собираем ваш заказ и отправляем его курьеру
+                </div>
+                <div class="order_text4">
+                    Курьер привозит заказ и вы его оплачиваете при получении
+                </div>
+                <div class="order_number order_number3">3</div>
+                <div class="order_number order_number4">4</div>
+            </div>
+        </div>
+        <div class="order-image-420">
+            <img src="img/curve_lines_mini.png" alt="как заказать">
+            <div class="order_number order_number1">1</div>
+            <div class="order_number order_number2">2</div>
+            <div class="order_number order_number3">3</div>
+            <div class="order_number order_number4">4</div>
+            <div class="order_text1">
+                Оформляете заказ на сайте
+            </div>
+            <div class="order_text2">
+                Наши операторы свяжутся с вами для подтверждение заказа
+            </div>
+            <div class="order_text3">
+                Мы собираем ваш заказ и отправляем его курьеру
+            </div>
+            <div class="order_text4">
+                Курьер привозит заказ и вы его оплачиваете при получении
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Отзывы</h2>
+        <div class="rewiews-slider multiple-items">
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client1.png" alt="client">
+                    </div>
+                    <div>Анастасия</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    Не первый раз делаю заказ в этом магазине, всегда остаюсь довольна качеством редких фруктов, которые
+                    реально не встретишь в магазине.
+                </div>
+            </div>
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client2.png" alt="client">
+                    </div>
+                    <div>Александр</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    Отличный магазин, дети всегда радуются, когда приходит курьер с большим пакетом :) Спасибо магазину
+                    за вкусные и полезные фрукты! Я повторюсь:
+                    Отличный магазин, дети всегда радуются, когда приходит курьер с большим пакетом :) Спасибо магазину
+                    за вкусные и полезные фрукты!
+                </div>
+            </div>
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client3.png" alt="client">
+                    </div>
+                    <div>Ачо Смысле</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    Люблю фруктов. Красивое
+                </div>
+            </div>
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client4.png" alt="client">
+                    </div>
+                    <div>╨╜╨╕╤З╨</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    ╨в╨╡╤Е╨╜╨╕╤З╨╡╤Б╨║╨╛╨╡ ╨╖╨░╨┤╨░╨╜╨╕╨╡ ╨╜╨░ ╨┤╨╕╨┐╨╗╨╛╨╝╨╜╤Г╤О ╤А╨░╨▒╨╛╤В╤Г
+                </div>
+            </div>
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client5.png" alt="client">
+                    </div>
+                    <div>Игорь Ильин</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    Эти необычные фрукты содержат в себе все необходимые витамины и минералы, необходимые при изучении
+                    фронтенда.
+                </div>
+            </div>
+            <div class="rewiews-slider-item">
+                <div class="rewiews-slider-item_name">
+                    <div class="rewiews-slider-item_name-image">
+                        <img src="img/client6.png" alt="client">
+                    </div>
+                    <div>Феофан</div>
+                </div>
+                <div class="rewiews-slider-item_text">
+                    Фрукты, заморские!
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <h2 class="wow animate__fadeIn">Часто задаваемые вопросы</h2>
+        <div id="accordion" class="faq-accord">
+            <h3 class="ui-accordion-header-collapsed">Сколько ждать доставку заказа после оформления?</h3>
+            <div>
+                <p>В случае наличия всех товаров из вашего заказа, он будет доставлен в течении
+                    2 часов.</p>
+            </div>
+            <h3>Из каких стран доставляются фрукты?</h3>
+            <div>
+                <p>Мы работаем с провереннными производителями из Таиланда, Въетнама, Бразилии и ЮАР.</p>
+            </div>
+            <h3>Можно ли вернуть заказ, если качество мне не понравилось?</h3>
+            <div>
+                <p>Да, при проверке качества в присутствии курьера вы можете отказаться от заказа. Стоимость
+                    доставки
+                    оплачивается в любом случае.</p>
+            </div>
+            <h3>Сколько стоит доставка?</h3>
+            <div>
+                <p>Стоимость доставки 500 руб. При заказе от 1000 руб. стоимость доставки бесплатная.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="footer-background">
+        <div class="container">
+            <div class="footer-flex">
+                <img src="img/logo_footer.png" alt="logo footer">
+                <div class="footer-flex-socials">
+                    <a href="#1">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="43"
+                             viewBox="0 0 50 50">
+                            <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="43" viewBox="0 0 24 24">
+                            <path d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z"/>
+                        </svg>
+                    </a>
+                    <a href="#1">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="43"
+                             viewBox="0 0 50 50">
+                            <path d="M25,2C12.318,2,2,12.318,2,25s10.318,23,23,23c12.683,0,23-10.318,23-23S37.683,2,25,2z M34.973,29.535 c2.237,1.986,2.702,2.695,2.778,2.816C38.678,33.821,36.723,34,36.723,34h-4.12c0,0-1.003,0.011-1.86-0.557 c-1.397-0.915-2.86-2.689-3.888-2.381C25.992,31.32,26,32.486,26,33.483C26,33.84,25.693,34,25,34s-0.981,0-1.288,0 c-2.257,0-4.706-0.76-7.149-3.313c-3.456-3.609-6.487-10.879-6.487-10.879s-0.179-0.366,0.016-0.589 c0.221-0.25,0.822-0.218,0.822-0.218L14.909,19c0,0,0.376,0.071,0.646,0.261c0.223,0.156,0.347,0.454,0.347,0.454 s0.671,2.216,1.526,3.629c1.67,2.758,2.447,2.828,3.014,2.531C21.27,25.445,21,22.513,21,22.513s0.037-1.259-0.395-1.82 c-0.333-0.434-0.97-0.665-1.248-0.701c-0.225-0.029,0.151-0.423,0.63-0.648C20.627,19.059,21.498,18.986,23,19 c1.169,0.011,1.506,0.081,1.962,0.186C26.341,19.504,26,20.343,26,23.289c0,0.944-0.13,2.271,0.582,2.711 c0.307,0.19,1.359,0.422,3.231-2.618c0.889-1.442,1.596-3.834,1.596-3.834s0.146-0.263,0.373-0.393 c0.232-0.133,0.225-0.13,0.543-0.13S35.832,19,36.532,19c0.699,0,1.355-0.008,1.468,0.402c0.162,0.589-0.516,2.607-2.234,4.797 C32.943,27.793,32.63,27.457,34.973,29.535z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-rights">
+                Все права защищены, <span>2020</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<a href="#top" class="top-button">
+    <img src="img/accord_up.png" alt="">
+</a>
+
+
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/jquery-ui.min.js"></script>
+<script src="scripts/wow.min.js"></script>
+<script src="scripts/jquery.inputmask.min.js"></script>
+<script src="scripts/slick.js"></script>
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
