@@ -314,18 +314,19 @@ window.onload = function () {
             hasError = true;
         }
         if (!hasError) {
-            $.ajax({
-                method: "POST",
-                url: "https://testologia.site/checkout",
-                data: { product: productSelect.val(), name: name.val(), phone: phone.val() }
-            })
-                .done(function (msg) {
-                    if (msg.success) {
-                        hideForm();
-                    } else {
-                        alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
-                    }
-                });
+            hideForm();
+            // $.ajax({
+            //     method: "POST",
+            //     url: "https://testologia.site/checkout",
+            //     data: { product: productSelect.val(), name: name.val(), phone: phone.val() }
+            // })
+            //     .done(function (msg) {
+            //         if (msg.success) {
+            //             hideForm();
+            //         } else {
+            //             alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
+            //         }
+            //     });
         }
     });
 
