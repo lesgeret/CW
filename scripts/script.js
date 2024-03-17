@@ -3,6 +3,8 @@
 // $(document).ready(function() {
 window.onload = function () {
 
+    $(window).trigger('resize');
+
     // ПЛАВНЫЙ СКРОЛЛ
     $('#pod_link').on('click', function () {
         $('.pod')[0].scrollIntoView({ behavior: 'smooth', block: "center" });
@@ -64,6 +66,9 @@ window.onload = function () {
     })
 
     // slider SLICK
+
+    setTimeout(function () {
+
     $('.pod-grid').each(function () {     /* выделяем слайдер в блоке Товар дня */
 
         $('.slider-nav', this).slick({
@@ -97,6 +102,10 @@ window.onload = function () {
         });
     });
 
+}, 500);
+
+setTimeout(function () {
+
     $('.reviews').each(function () {    /* выделяем слайдер в блоке Отзывы */
         $('.multiple-items', this).slick({
             infinite: true,
@@ -115,6 +124,8 @@ window.onload = function () {
             ]
         });
     });
+
+}, 500);
 
     // аккордеон
     $(function () {
@@ -234,7 +245,8 @@ window.onload = function () {
     document.getElementById('quantity').oninput = (e) => {
         let value = e.target.value;
         if (value.length > 1) {
-            value = value.slice(0, 1);
+        value = value.slice(0, 1);
+        document.getElementById('quantity').value = value;
         }
     }
 
